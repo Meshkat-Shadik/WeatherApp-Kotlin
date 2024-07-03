@@ -1,4 +1,4 @@
-package com.example.weatherapp.features.new_weather.data.dto
+package com.example.weatherapp.features.weather.data.dto
 
 import com.google.gson.annotations.SerializedName
 
@@ -6,13 +6,13 @@ data class CoordDto(
     @SerializedName("lon") val lon: Double,
     @SerializedName("lat") val lat: Double
 )
+
 data class WeatherDetailDto(
     @SerializedName("id") val id: Int,
     @SerializedName("main") val main: String,
     @SerializedName("description") val description: String,
     @SerializedName("icon") val icon: String
 )
-
 
 
 data class MainDto(

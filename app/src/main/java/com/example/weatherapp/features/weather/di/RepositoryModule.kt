@@ -1,9 +1,8 @@
-package com.example.weatherapp.features.new_weather.di
+package com.example.weatherapp.features.weather.di
 
-import com.example.weatherapp.features.new_weather.data.repository.WeatherRepositoryImpl
-import com.example.weatherapp.features.new_weather.data.data_source.remote.WeatherRemoteDataSource
-import com.example.weatherapp.features.new_weather.domain.repository.WeatherRepository
-import com.example.weatherapp.features.new_weather.presentation.viewmodel.WeatherViewModel
+import com.example.weatherapp.features.weather.data.data_source.remote.WeatherRemoteDataSource
+import com.example.weatherapp.features.weather.data.repository.WeatherRepositoryImpl
+import com.example.weatherapp.features.weather.domain.repository.WeatherRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

@@ -1,4 +1,4 @@
-package com.example.weatherapp.features.new_weather.presentation.ui
+package com.example.weatherapp.features.weather.presentation.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -25,8 +25,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.weatherapp.core.wrapper.UIState
-import com.example.weatherapp.features.new_weather.presentation.viewmodel.WeatherViewModel
-import com.example.weatherapp.features.new_weather.presentation.ui.theme.WeatherAppTheme
+import com.example.weatherapp.features.weather.presentation.ui.theme.WeatherAppTheme
+import com.example.weatherapp.features.weather.presentation.viewmodel.WeatherViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -70,16 +70,20 @@ fun CityWeatherScreen() {
         TextField(
             value = citySearchQuery,
             onValueChange = { citySearchQuery = it },
-            placeholder = { Text("Enter City Name")},
+            placeholder = { Text("Enter City Name") },
             modifier = Modifier.fillMaxWidth(),
         )
         //  UI based on the state
         when (val currentState = uiState) {
             is UIState.Idle -> {}
-            is UIState.Loading -> {CircularProgressIndicator()}
+            is UIState.Loading -> {
+                CircularProgressIndicator()
+            }
+
             is UIState.Success -> {
                 Text("Weather Data: ${currentState.data}")
             }
+
             is UIState.Failure -> {
                 Text("Error: ${currentState.failure.message}")
             }
