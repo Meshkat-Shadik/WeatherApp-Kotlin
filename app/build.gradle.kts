@@ -59,13 +59,12 @@ dependencies {
 
     //extended icons
     implementation("androidx.compose.material:material-icons-extended:1.6.8")
-
     //arrow
     implementation("io.arrow-kt:arrow-core:1.2.0")
     implementation("io.arrow-kt:arrow-fx-coroutines:1.2.0")
 
     //coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
     //retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

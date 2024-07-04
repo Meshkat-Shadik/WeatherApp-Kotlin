@@ -11,6 +11,8 @@ interface WeatherRemoteDataSource {
     @GET("weather")
     suspend fun getWeather(
         @Query("q") cityName: String,
-        @Query("appid") apiKey: String
+        @Query("appid") apiKey: String,
+        //default units set to metric
+        @Query("units") units: String = "metric"
     ): WeatherDto
 }

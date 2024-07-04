@@ -5,11 +5,11 @@ import com.google.gson.reflect.TypeToken
 import retrofit2.HttpException
 
 data class NetworkFailure(
-     val errName: String,
-     val errMsg: String,
+    val errName: String,
+    val errMsg: String,
     val uriPath: String,
     val statusCode: Int
-) : AppFailure (errMsg,errName) {
+) : AppFailure(errMsg, errName) {
     companion object {
         private val gson = Gson()
 
@@ -18,12 +18,12 @@ data class NetworkFailure(
             val errorBody = response?.errorBody()?.string() ?: "{}"
             val errorMsgMap = parseErrorMessage(errorBody)
 
-           var errorMsg  = ""
-            if(errorMsgMap.containsKey("message")) {
+            var errorMsg = ""
+            if (errorMsgMap.containsKey("message")) {
                 errorMsg = errorMsgMap["message"].toString()
-            } else if(errorMsgMap.containsKey("error")) {
+            } else if (errorMsgMap.containsKey("error")) {
                 errorMsg = errorMsgMap["error"].toString()
-            } else if(errorMsgMap.containsKey("errors")) {
+            } else if (errorMsgMap.containsKey("errors")) {
                 errorMsg = errorMsgMap["errors"].toString()
             }
 
